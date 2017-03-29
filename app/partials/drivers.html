@@ -1,0 +1,30 @@
+﻿
+
+<div class="row listTable">
+    <input type="text" ng-model="nameFilter" placeholder="Search..." />
+    <div class="driverListHeading">Drivers Championship Standings</div>
+    <table class="table table-responsive table-hover">
+        <tr>
+            <td>#</td>
+            <td>Nationality</td>
+            <td>Name</td>
+            <td>Sponsor</td>
+            <td>Points</td>
+            <td></td>
+        </tr>
+        <tr ng-repeat="driver in driversList | filter: searchFilter">
+            <td>{{$index + 1}}</td>
+            <td>{{driver.Driver.nationality}}</td>
+            <td>{{driver.Driver.givenName}}&nbsp;{{driver.Driver.familyName}}</td>
+            <td>{{driver.Constructors[0].name}}</td>
+            <td>{{driver.points}}</td>
+            <td><a href="./#/drivers/{{driver.Driver.driverId}}">View </a></td>
+        </tr>
+    </table>
+</div>
+
+
+
+
+
+
